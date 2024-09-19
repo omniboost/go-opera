@@ -3,7 +3,7 @@ package opera
 import "encoding/xml"
 
 // FINJRNLBYTRANS was generated 2024-09-05 13:59:27 by https://xml-to-go.github.io/ in Ukraine.
-type FinancialJournal struct {
+type FinancialJournalByTransaction struct {
 	XMLName           xml.Name `xml:"FINJRNLBYTRANS"`
 	LISTGISINTERNALYN struct {
 		GISINTERNALYN struct {
