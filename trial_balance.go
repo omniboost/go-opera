@@ -17,7 +17,7 @@ type TrialBalance struct {
 					TRXCODE              string  `xml:"TRX_CODE"`
 					DESCRIPTION          string  `xml:"DESCRIPTION"`
 					TBAMOUNT             float64 `xml:"TB_AMOUNT"`
-					TRXDATE              string  `xml:"TRX_DATE"`
+					TRXDATE              Date    `xml:"TRX_DATE"`
 					NETAMOUNT            float64 `xml:"NET_AMOUNT"`
 					GUESTLEDDEBIT        float64 `xml:"GUEST_LED_DEBIT"`
 					GUESTLEDCREDIT       float64 `xml:"GUEST_LED_CREDIT"`

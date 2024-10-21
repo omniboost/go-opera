@@ -1,6 +1,9 @@
 package opera
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"time"
+)
 
 // FINJRNLBYTRANS was generated 2024-09-05 13:59:27 by https://xml-to-go.github.io/ in Ukraine.
 type FinancialJournalByTransaction struct {
@@ -25,9 +28,9 @@ type FinancialJournalByTransaction struct {
 											TARGETRESORT         string  `xml:"TARGET_RESORT"`
 											TRXDESC              string  `xml:"TRX_DESC"`
 											MARKETCODE           string  `xml:"MARKET_CODE"`
-											BUSINESSFORMATDATE   string  `xml:"BUSINESS_FORMAT_DATE"`
+											BUSINESSFORMATDATE   Date    `xml:"BUSINESS_FORMAT_DATE"`
 											BUSINESSTIME         string  `xml:"BUSINESS_TIME"`
-											BUSINESSDATE         string  `xml:"BUSINESS_DATE"`
+											BUSINESSDATE         Date    `xml:"BUSINESS_DATE"`
 											REFERENCE            string  `xml:"REFERENCE"`
 											TRXNO                string  `xml:"TRX_NO"`
 											CASHIERDEBIT         float64 `xml:"CASHIER_DEBIT"`
@@ -39,7 +42,7 @@ type FinancialJournalByTransaction struct {
 											CASHIERID            string  `xml:"CASHIER_ID"`
 											REMARK               string  `xml:"REMARK"`
 											INSERTUSER           string  `xml:"INSERT_USER"`
-											INSERTDATE           string  `xml:"INSERT_DATE"`
+											INSERTDATE           Date    `xml:"INSERT_DATE"`
 											CHEQUENUMBER         string  `xml:"CHEQUE_NUMBER"`
 											ROOMCLASS            string  `xml:"ROOM_CLASS"`
 											CCCODE               string  `xml:"CC_CODE"`
@@ -71,4 +74,53 @@ type FinancialJournalByTransaction struct {
 	RDEBIT  float64 `xml:"R_DEBIT"`
 	RCREDIT float64 `xml:"R_CREDIT"`
 	LOGO    string  `xml:"LOGO"`
+}
+
+type Date struct {
+	time.Time
+}
+
+func (t *Date) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	s := ""
+	err := d.DecodeElement(&s, &start)
+	if err != nil {
+		return err
+	}
+
+	if s == "" {
+		return nil
+	}
+
+	layout := "02-Jan-06"
+	nt, err := time.Parse(layout, s)
+	if err == nil {
+		*t = Date{Time: nt}
+		return nil
+	}
+
+	layout = "01-02-06"
+	nt, err = time.Parse(layout, s)
+	if err == nil {
+		*t = Date{Time: nt}
+		return nil
+	}
+
+	layout = "2006-01-02"
+	nt, err = time.Parse(layout, s)
+	if err == nil {
+		*t = Date{Time: nt}
+		return nil
+	}
+
+	return err
+}
+
+func (t Date) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	layout := "2006-01-02"
+	s := t.Format(layout)
+	return e.EncodeElement(s, start)
+}
+
+type FormatDate struct {
+	time.Time
 }
