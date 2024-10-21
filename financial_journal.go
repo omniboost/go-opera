@@ -7,73 +7,73 @@ import (
 
 // FINJRNLBYTRANS was generated 2024-09-05 13:59:27 by https://xml-to-go.github.io/ in Ukraine.
 type FinancialJournalByTransaction struct {
-	XMLName           xml.Name `xml:"FINJRNLBYTRANS"`
-	LISTGISINTERNALYN struct {
-		GISINTERNALYN struct {
-			ISINTERNALYN string `xml:"IS_INTERNAL_YN"`
-			LISTGFIRST   struct {
-				GFIRST []struct {
-					FIRST      string `xml:"FIRST"`
-					LISTSECOND struct {
-						SECOND struct {
-							SECOND    string `xml:"SECOND"`
-							LISTTHIRD struct {
-								THIRD struct {
-									THIRD            string `xml:"THIRD"`
-									LISTGTRXCHARDATE struct {
-										GTRXCHARDATE []struct {
-											EXPDATE              string  `xml:"EXP_DATE"`
-											RECEIPTNO            string  `xml:"RECEIPT_NO"`
-											GUESTFULLNAME        string  `xml:"GUEST_FULL_NAME"`
-											TARGETRESORT         string  `xml:"TARGET_RESORT"`
-											TRXDESC              string  `xml:"TRX_DESC"`
-											MARKETCODE           string  `xml:"MARKET_CODE"`
-											BUSINESSFORMATDATE   Date    `xml:"BUSINESS_FORMAT_DATE"`
-											BUSINESSTIME         string  `xml:"BUSINESS_TIME"`
-											BUSINESSDATE         Date    `xml:"BUSINESS_DATE"`
-											REFERENCE            string  `xml:"REFERENCE"`
-											TRXNO                string  `xml:"TRX_NO"`
-											CASHIERDEBIT         float64 `xml:"CASHIER_DEBIT"`
-											CASHIERCREDIT        float64 `xml:"CASHIER_CREDIT"`
-											ROOM                 string  `xml:"ROOM"`
-											CREDITCARDSUPPLEMENT string  `xml:"CREDIT_CARD_SUPPLEMENT"`
-											CURRENCY1            string  `xml:"CURRENCY1"`
-											TRXCODE              string  `xml:"TRX_CODE"`
-											CASHIERID            string  `xml:"CASHIER_ID"`
-											REMARK               string  `xml:"REMARK"`
-											INSERTUSER           string  `xml:"INSERT_USER"`
-											INSERTDATE           Date    `xml:"INSERT_DATE"`
-											CHEQUENUMBER         string  `xml:"CHEQUE_NUMBER"`
-											ROOMCLASS            string  `xml:"ROOM_CLASS"`
-											CCCODE               string  `xml:"CC_CODE"`
-											CASHIERNAME          string  `xml:"CASHIER_NAME"`
-											USERNAME             string  `xml:"USER_NAME"`
-											DEPNETTAXAMT         float64 `xml:"DEP_NET_TAX_AMT"`
-											DEPOSITDEBIT         string  `xml:"DEPOSIT_DEBIT"`
-											CASHIDUSERNAME       string  `xml:"CASH_ID_USER_NAME"`
-											PRINTCASHIERDEBIT    float64 `xml:"PRINT_CASHIER_DEBIT"`
-											PRINTCASHIERCREDIT   float64 `xml:"PRINT_CASHIER_CREDIT"`
+	Finjrnlbytrans    xml.Name `xml:"FINJRNLBYTRANS"`
+	ListGIsInternalYn struct {
+		GIsInternalYn struct {
+			IsInternalYn string `xml:"IS_INTERNAL_YN"`
+			ListGFirst   struct {
+				GFirst []struct {
+					First      string `xml:"FIRST"`
+					ListSecond struct {
+						Second struct {
+							Second    string `xml:"SECOND"`
+							ListThird struct {
+								Third struct {
+									Third            string `xml:"THIRD"`
+									ListGTrxCharDate struct {
+										GTrxCharDate []struct {
+											ExpDate              string  `xml:"EXP_DATE"`
+											ReceiptNo            string  `xml:"RECEIPT_NO"`
+											GuestFullName        string  `xml:"GUEST_FULL_NAME"`
+											TargetResort         string  `xml:"TARGET_RESORT"`
+											TrxDesc              string  `xml:"TRX_DESC"`
+											MarketCode           string  `xml:"MARKET_CODE"`
+											BusinessFormatDate   Date    `xml:"BUSINESS_FORMAT_DATE"`
+											BusinessTime         string  `xml:"BUSINESS_TIME"`
+											BusinessDate         Date    `xml:"BUSINESS_DATE"`
+											Reference            string  `xml:"REFERENCE"`
+											TrxNo                string  `xml:"TRX_NO"`
+											CashierDebit         float64 `xml:"CASHIER_DEBIT"`
+											CashierCredit        float64 `xml:"CASHIER_CREDIT"`
+											Room                 string  `xml:"ROOM"`
+											CreditCardSupplement string  `xml:"CREDIT_CARD_SUPPLEMENT"`
+											Currency1            string  `xml:"CURRENCY1"`
+											TrxCode              string  `xml:"TRX_CODE"`
+											CashierId            string  `xml:"CASHIER_ID"`
+											Remark               string  `xml:"REMARK"`
+											InsertUser           string  `xml:"INSERT_USER"`
+											InsertDate           Date    `xml:"INSERT_DATE"`
+											ChequeNumber         string  `xml:"CHEQUE_NUMBER"`
+											RoomClass            string  `xml:"ROOM_CLASS"`
+											CcCode               string  `xml:"CC_CODE"`
+											CashierName          string  `xml:"CASHIER_NAME"`
+											UserName             string  `xml:"USER_NAME"`
+											DepNetTaxAmt         float64 `xml:"DEP_NET_TAX_AMT"`
+											DepositDebit         string  `xml:"DEPOSIT_DEBIT"`
+											CashIdUserName       string  `xml:"CASH_ID_USER_NAME"`
+											PrintCashierDebit    float64 `xml:"PRINT_CASHIER_DEBIT"`
+											PrintCashierCredit   float64 `xml:"PRINT_CASHIER_CREDIT"`
 										} `xml:"G_TRX_CHAR_DATE"`
 									} `xml:"LIST_G_TRX_CHAR_DATE"`
-									THIRDDEBIT  float64 `xml:"THIRD_DEBIT"`
-									THIRDCREDIT float64 `xml:"THIRD_CREDIT"`
+									ThirdDebit  float64 `xml:"THIRD_DEBIT"`
+									ThirdCredit float64 `xml:"THIRD_CREDIT"`
 								} `xml:"THIRD"`
 							} `xml:"LIST_THIRD"`
-							SECONDDEBIT  float64 `xml:"SECOND_DEBIT"`
-							SECONDCREDIT float64 `xml:"SECOND_CREDIT"`
+							SecondDebit  float64 `xml:"SECOND_DEBIT"`
+							SecondCredit float64 `xml:"SECOND_CREDIT"`
 						} `xml:"SECOND"`
 					} `xml:"LIST_SECOND"`
-					FIRSTDEBIT  float64 `xml:"FIRST_DEBIT"`
-					FIRSTCREDIT float64 `xml:"FIRST_CREDIT"`
+					FirstDebit  float64 `xml:"FIRST_DEBIT"`
+					FirstCredit float64 `xml:"FIRST_CREDIT"`
 				} `xml:"G_FIRST"`
 			} `xml:"LIST_G_FIRST"`
-			INTERNALDEBIT  float64 `xml:"INTERNAL_DEBIT"`
-			INTERNALCREDIT float64 `xml:"INTERNAL_CREDIT"`
+			InternalDebit  float64 `xml:"INTERNAL_DEBIT"`
+			InternalCredit float64 `xml:"INTERNAL_CREDIT"`
 		} `xml:"G_IS_INTERNAL_YN"`
 	} `xml:"LIST_G_IS_INTERNAL_YN"`
-	RDEBIT  float64 `xml:"R_DEBIT"`
-	RCREDIT float64 `xml:"R_CREDIT"`
-	LOGO    string  `xml:"LOGO"`
+	RDebit  float64 `xml:"R_DEBIT"`
+	RCredit float64 `xml:"R_CREDIT"`
+	Logo    string  `xml:"LOGO"`
 }
 
 type Date struct {
