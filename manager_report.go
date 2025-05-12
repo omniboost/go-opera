@@ -23,7 +23,7 @@ type ManagerReport struct {
 									AmountFormatType   string `xml:"AMOUNT_FORMAT_TYPE"`
 									PrintLineAfterYN   string `xml:"PRINT_LINE_AFTER_YN"`
 									ListGHeading1Order struct {
-										GHeading1Order struct {
+										GHeading1Order []struct {
 											Heading1Order  string `xml:"HEADING_1_ORDER"`
 											Heading1       string `xml:"HEADING_1"`
 											Heading2       string `xml:"HEADING_2"`
